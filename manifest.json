@@ -1,19 +1,17 @@
 {
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Image Hider",
     "version": "1.0",
-    "permissions": ["activeTab", "storage", "tabs", "http://*/*", "https://*/*"],
+    "host_permissions": [
+        "http://*/*",
+        "https://*/*"
+      ],
+    "permissions": ["activeTab", "storage", "scripting", "tabs"],
     "background": {
-      "scripts": ["background.js"],
-      "persistent": false
+      "service_worker": "background.js"
     },
-    "content_scripts": [
-      {
-        "all_frames": true,
-        "matches": ["*://*/*"],
-        "js": ["content.js"],
-        "run_at": "document_end"
-      }
-    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
     "options_page": "options.html"
   }

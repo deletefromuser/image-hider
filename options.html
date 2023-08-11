@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Image Hider Settings</title>
+  <style>
+    #domains {
+      width: 500px;
+      height: 200px;
+    }
+  </style>
 </head>
+
 <body>
   <h1>Image Hider Settings</h1>
   <form id="settingsForm">
     <label for="domains">Domains to hide images:</label><br>
-    <textarea id="domains" name="domains"></textarea><br>
+    <textarea id="domains" name="domains" placeholder="e.g., google.com
+    localhost"></textarea><br>
     <input type="submit" value="Save">
   </form>
   <script src="options.js"></script>
 </body>
+
 </html>
