@@ -19,10 +19,6 @@ chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (changeInfo.status === 'complete') {
         if (tab && tab.url.includes('chrome://')) {
         } else {
-            chrome.scripting.executeScript({
-                target: { tabId: tab.id },
-                function: hideImages
-            });
             // 从存储中获取域名列表
             chrome.storage.sync.get(['domains'], function (result) {
                 var domains = result.domains || [];
