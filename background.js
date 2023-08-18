@@ -1,7 +1,7 @@
 console.log("Hi from background script file");
 
 function hideImages() {
-    var images = document.getElementsByTagName('img');
+    var images = document.querySelectorAll('img, iframe');
     for (var i = 0; i < images.length; i++) {
         images[i].style.display = 'none';
     }

@@ -38,14 +38,14 @@ document.getElementById('showImagesButton').addEventListener('click', function (
 });
 
 function hideImages() {
-  var images = document.getElementsByTagName('img');
+  var images = document.querySelectorAll('img, iframe');
   for (var i = 0; i < images.length; i++) {
     images[i].style.display = 'none';
   }
 }
 
 function showImages() {
-  var images = document.getElementsByTagName('img');
+  var images = document.querySelectorAll('img, iframe');
   for (var i = 0; i < images.length; i++) {
     images[i].style.display = '';
   }
