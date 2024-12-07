@@ -1,17 +1,36 @@
 {
-    "manifest_version": 3,
-    "name": "Image Hider",
-    "version": "1.0",
-    "host_permissions": [
+  "manifest_version": 3,
+  "name": "Image Hider",
+  "description": "Hide all images on specific websites automatically.",
+  "version": "1.1",
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
         "http://*/*",
-        "https://*/*"
+        "https://*/*",
+        "file://*"
       ],
-    "permissions": ["activeTab", "storage", "scripting", "tabs"],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "action": {
-      "default_popup": "popup.html"
-    },
-    "options_page": "options.html"
-  }
+      "js": [
+        "content.js",
+        "popup.js"
+      ]
+    }
+  ],
+  "options_page": "options.html"
+}
