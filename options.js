@@ -1,6 +1,6 @@
 document.getElementById('settingsForm').addEventListener('submit', function(event) {
     event.preventDefault();
-    var domains = document.getElementById('domains').value.split('\n');
+    let domains = document.getElementById('domains').value.split('\n');
     chrome.storage.sync.set({domains: domains}, function() {
       alert('Settings saved.');
     });

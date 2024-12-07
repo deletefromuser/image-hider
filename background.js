@@ -9,12 +9,13 @@
 
 chrome.tabs.onUpdated.addListener(function (tabId, changeInfo, tab) {
     if (changeInfo.status === 'complete') {
-        if (tab && tab.url.includes('chrome://')) {
+        if (tab?.url.includes('chrome://')) {
+            ;
         } else {
             // 从存储中获取域名列表
             chrome.storage.sync.get(['domains'], function (result) {
-                var domains = result.domains || [];
-                var url = new URL(tab.url);
+                let domains = result.domains || [];
+                let url = new URL(tab.url);
                 if (domains.includes(url.hostname)) {
                     chrome.tabs.sendMessage(tab.id, {show: 0});
                 }

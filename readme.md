@@ -1,6 +1,6 @@
 # Image Hider Chrome Extension
 
-Image Hider is a Chrome extension that allows users to hide all images on specific websites. This is particularly useful for users who want to focus on text content without any visual distractions, or for those who want to save data by not loading images.
+Image Hider is a Chrome extension that allows users to hide all images on specific websites. This is particularly useful for users who want to focus on text content without any visual distractions.
 
 ## Features
 
