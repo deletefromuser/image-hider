@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           chrome.storage.sync.set({ domains: domains }, function () {
           });
   
-          console.log(currentHost);
-          chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id },
-            function: hideImages
-          });
+          chrome.tabs.sendMessage(tabs[0].id, {show: 0});
         }
       });
     });
@@ -29,10 +25,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
           domains = domains.filter(e => e !== currentHost);
           chrome.storage.sync.set({ domains: domains });
   
-          chrome.scripting.executeScript({
-            target: { tabId: tabs[0].id },
-            function: showImages
-          });
+          chrome.tabs.sendMessage(tabs[0].id, {show: 1});
         }
       });
     });

@@ -27,8 +27,7 @@
         "file://*"
       ],
       "js": [
-        "content.js",
-        "popup.js"
+        "content.js"
       ]
     }
   ],

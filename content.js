@@ -32,3 +32,13 @@ function hideImages() {
 function showImages() {
   hideImagesInShadowRoots(document.documentElement, 1);
 }
+
+chrome.runtime.onMessage.addListener(
+  function (request, sender, sendResponse) {
+    if (!request.show) {
+      hideImages();
+    } else {
+      showImages();
+    }
+  }
+);
